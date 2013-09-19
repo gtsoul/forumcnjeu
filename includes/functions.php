@@ -4687,6 +4687,7 @@ function page_header($page_title = '', $display_online_list = true, $item_id = 0
     
     'CNJEU_URL' => CNJEU_URL,
     'CNJEU_FORUM_URL' => CNJEU_FORUM_URL,
+    'BOULOGNE_URL'    => BOULOGNE_URL,
 	));
 
 	// application/xhtml+xml not used because of IE

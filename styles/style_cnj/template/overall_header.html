@@ -96,7 +96,6 @@
 
 <body id="phpbb" class="section-{SCRIPT_NAME} {S_CONTENT_DIRECTION}">
 
-  <div id="logo_div"> </div>
   <div class="header">
     <div class="container-header-menu">
       <!-- container -->
@@ -178,6 +177,13 @@
     <!--! container -->
     </div>
   </div>
+  
+  <div id="cnj_logo">
+    <a href="{CNJEU_URL}/"><img src="{T_THEME_PATH}/images/cnj.png"/></a>
+  </div>
+  <div id="boulogne_logo">
+    <a href="{BOULOGNE_URL}/"><img src="{T_THEME_PATH}/images/boulogne.png"/></a>
+  </div>
 
 <div id="wrap">
 
@@ -187,23 +193,35 @@
       padding-top: 0;
     }
     #wrap {
-      background: url("styles/style_cnj/theme/images/bg_wrap.png") repeat scroll left top transparent;
+      background: url("styles/style_cnj/theme/images/bg_wrap.jpg") repeat fixed left top transparent;
+      padding-bottom: 20px;
+      padding-top: 20px;
+      min-height: 100%;
     }  
-    #logo_div {
-      background: url("styles/style_cnj/theme/images/logo_cnj_footer.png") no-repeat scroll left top transparent;
-      width: 367px;
-      height: 76px;
+    #cnj_logo {
       position: absolute;
-      top: 0;
-      right: 0;
+      top: 0px;
+      left: 0px;
+      box-shadow: -1px 2px 8px 1px rgba(0, 0, 0, 0.7);
+      height: 60px;
     }
+    #boulogne_logo {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      box-shadow: -1px 2px 8px 1px rgba(0, 0, 0, 0.7);
+      height: 60px;
+    }    
     .forabg, .forumbg {
       border-radius: 5px;
-    }
+    }    
+    .header {
+      margin-left: 113px;
+      margin-right: 172px;    
+    }    
     .header .container-header-menu {
       background: url("{CNJEU_URL}/templates/lch_cnj/images/fond-header.png") repeat-x scroll left top transparent;
       height: 46px;
-	  margin-bottom: -5px;
     }
     .container {
       margin: auto;
@@ -245,6 +263,92 @@
     }
     .header #header-menu ul.menu li a:hover, .header #header-menu ul.menu li.current a, .header #header-menu ul.menu li.active a {
       color: #FFFFFF;
+    }
+     
+    #page-body .linklist, #page-footer, p.left, p.right {
+      background-color:rgba(255,255,255,0.7);
+      border-radius: 5px;
+    }
+    
+    #page-body form.headerspace, .topic-actions .pagination, p a.left, p a.right, #page-body .whitebox {
+      padding: 3px;
+      min-height: 14px;
+      background-color:rgba(255,255,255,0.7);
+      border-radius: 5px;      
+    }
+    
+    h2 {
+      background-color:rgba(255,255,255,0.7);
+      border-radius: 5px; 
+      display: inline-block;
+      margin: 16px 0;
+    }
+    
+    p a.left {
+      padding-left: 12px;
+    }
+    
+    p a.right {
+      padding-left: 12px;
+    }    
+    
+    ul.forums {    
+      background-color: transparent;
+      background-image: none;
+    }
+
+    ul.forums li.row {    
+      background-color:rgba(247,247,247,0.9);
+    }
+
+    ul.forums li.row:nth-child(odd) {    
+      background-color:rgba(247,247,247,0.6);
+    }    
+    
+    ul.forums li.row:hover {
+      background-color: #FDD8A7;
+    }   
+
+    ul.forums li.row:first-child {
+      border-top-left-radius: 5px;
+      border-top-left-radius: 5px;
+    }
+    ul.forums li.row:last-child {
+      border-bottom-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }  
+    
+    #page-footer .navbar, #page-footer .corners-top, #page-footer .corners-bottom, #page-footer .corners-top span, #page-footer .corners-bottom span {
+      background: transparent;
+    }
+    
+    .post h3 {
+      text-shadow: none;
+    }
+    
+    #page-body p.author {
+      background: transparent;
+    }
+  
+    .post .content { 
+      background-color: transparent;
+    }
+    
+    .postprofile {
+      float: left;
+      clear: both;
+      border-left: none;
+    }
+    
+    .postbody {
+      float: right;
+      clear: none;
+      border-left: 1px solid #FFFFFF;
+      padding-left: 8px;
+    }   
+    
+    .postbody ul.profile-icons {
+      padding-right: 50px;
     }
   </style>
 

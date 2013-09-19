@@ -281,6 +281,7 @@ define('ZEBRA_TABLE',				$table_prefix . 'zebra');
 // Cnjeu customisation
 define('CNJEU_FORUM_URL',				  'http://gtsoul.net/forum');
 define('CNJEU_URL',				        'http://gtsoul.net/cnjeu');
+define('BOULOGNE_URL',				    'http://www.boulognebillancourt.com');
 define('CNJEU_LOGIN_URL',				  CNJEU_URL . '/login/divers/connectez-vous-au-forum');
 define('CNJEU_LOGOUT_URL',				CNJEU_URL . '/login/divers/connectez-vous-au-forum');
 
