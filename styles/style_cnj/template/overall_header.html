@@ -179,10 +179,10 @@
   </div>
   
   <div id="cnj_logo">
-    <a href="{CNJEU_URL}/"><img src="{T_THEME_PATH}/images/cnj.png"/></a>
+    <a href="{CNJEU_FORUM_URL}/"><img src="{T_THEME_PATH}/images/bandeau_forum_g.png"/></a>
   </div>
   <div id="boulogne_logo">
-    <a href="{BOULOGNE_URL}/"><img src="{T_THEME_PATH}/images/boulogne.png"/></a>
+    <!--a href="{BOULOGNE_URL}/"--><img src="{T_THEME_PATH}/images/bandeau_forum_d.png"/><!--/a-->
   </div>
 
 <div id="wrap">
@@ -191,33 +191,59 @@
   <style>
     body {
       padding-top: 0;
+    }    
+    a:hover, a:active, a.forumtitle:hover, a.topictitle:hover,
+    .navbg a:hover, .forumbg .header a:hover, .forabg .header a:hover, th a:hover {
+      color: #91d7dd;
     }
+    .forabg .header a:link forabg, .header a:visited, .forumbg li.header dt {
+      color: #13a8b0 ;
+    }
+    .forabg, .forumbg, span.corners-top, span.corners-top span {
+      background: none;
+    }
+    .forabg, .forumbg {
+      background-image: linear-gradient(bottom, rgb(45,45,47) 0%, rgb(75,75,78) 8%, rgb(201,201,202) 95%);
+      background-image: -o-linear-gradient(bottom, rgb(45,45,47) 0%, rgb(75,75,78) 8%, rgb(201,201,202) 95%);
+      background-image: -moz-linear-gradient(bottom, rgb(45,45,47) 0%, rgb(75,75,78) 8%, rgb(201,201,202) 95%);
+      background-image: -webkit-linear-gradient(bottom, rgb(45,45,47) 0%, rgb(75,75,78) 8%, rgb(201,201,202) 95%);
+      background-image: -ms-linear-gradient(bottom, rgb(45,45,47) 0%, rgb(75,75,78) 8%, rgb(201,201,202) 95%);
+
+      background-image: -webkit-gradient(
+        linear,
+        left bottom,
+        left top,
+        color-stop(0, rgb(45,45,47)),
+        color-stop(0.08, rgb(75,75,78)),
+        color-stop(0.95, rgb(201,201,202))
+      );
+    }
+    .forabg, .forumbg {
+      border-radius: 5px;
+    }       
     #wrap {
-      background: url("styles/style_cnj/theme/images/bg_wrap.jpg") repeat fixed left top transparent;
+      /*background: url("styles/style_cnj/theme/images/bg_wrap.jpg") repeat fixed left top transparent;*/
       padding-bottom: 20px;
-      padding-top: 20px;
+      padding-top: 70px;
       min-height: 100%;
     }  
     #cnj_logo {
       position: absolute;
-      top: 0px;
+      top: 28px;
       left: 0px;
-      box-shadow: -1px 2px 8px 1px rgba(0, 0, 0, 0.7);
-      height: 60px;
+      /*box-shadow: -1px 2px 8px 1px rgba(0, 0, 0, 0.7);*/
+      height: 120px;
     }
     #boulogne_logo {
       position: absolute;
       top: 0px;
       right: 0px;
-      box-shadow: -1px 2px 8px 1px rgba(0, 0, 0, 0.7);
-      height: 60px;
-    }    
-    .forabg, .forumbg {
-      border-radius: 5px;
-    }    
+      /*box-shadow: -1px 2px 8px 1px rgba(0, 0, 0, 0.7);*/
+      height: 120px;
+    } 
     .header {
-      margin-left: 113px;
-      margin-right: 172px;    
+      /*margin-left: 113px;
+      margin-right: 172px;   */ 
     }    
     .header .container-header-menu {
       background: url("{CNJEU_URL}/templates/lch_cnj/images/fond-header.png") repeat-x scroll left top transparent;
@@ -225,7 +251,7 @@
     }
     .container {
       margin: auto;
-      width: 954px;
+      width: 754px;
     }    
     .header #header-menu {
       height: 36px;
@@ -297,12 +323,16 @@
       background-image: none;
     }
 
-    ul.forums li.row {    
-      background-color:rgba(247,247,247,0.9);
+    ul.forums li.row, ul.topiclist.topics li.row, .bg2post {    
+      /*background-color:rgba(247,247,247,0.9);*/
+      background-color: #EFEFEF;
     }
 
-    ul.forums li.row:nth-child(odd) {    
-      background-color:rgba(247,247,247,0.6);
+    ul.forums li.row:nth-child(odd), ul.topiclist.topics li.row:nth-child(odd), .bg1post {    
+      /*background-color:rgba(247,247,247,0.6);*/
+      /*background-color:rgba(164,160,164,1);*/
+      /*background-color:rgba(247,247,247,0.7);*/
+      background-color: #DEE3E7;
     }    
     
     ul.forums li.row:hover {
@@ -311,11 +341,11 @@
 
     ul.forums li.row:first-child {
       border-top-left-radius: 5px;
-      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
     }
     ul.forums li.row:last-child {
       border-bottom-left-radius: 5px;
-      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
     }  
     
     #page-footer .navbar, #page-footer .corners-top, #page-footer .corners-bottom, #page-footer .corners-top span, #page-footer .corners-bottom span {
@@ -338,6 +368,8 @@
       float: left;
       clear: both;
       border-left: none;
+      /*min-width: 162px;*/
+      width: 24%;
     }
     
     .postbody {
@@ -345,10 +377,20 @@
       clear: none;
       border-left: 1px solid #FFFFFF;
       padding-left: 8px;
+      width: 72%;
     }   
     
     .postbody ul.profile-icons {
       padding-right: 50px;
+    }
+    
+    .topiclist .header .icon dt, .topiclist .header .icon dt a {
+      color: #4689B9;
+      font-size: 13px;
+    }
+    
+    .topiclist.forums .forumtitle, .topiclist.topics .topictitle {
+      color: #056B9E;
     }
   </style>
 
